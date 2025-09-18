@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { ArrowLeft, ChevronLeft, ChevronRight, Search, Filter, X, RefreshCw, Eye, Edit, Trash2, Plus, Building, Phone, Mail, Globe } from 'lucide-react';
+import { ArrowLeft, ChevronLeft, ChevronRight, Search, X, RefreshCw, Eye, Edit, Trash2, Plus, Phone, Mail } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 import Sidebar from '@/components/Sidebar';
 import Topbar from '@/components/Topbar';
@@ -199,7 +199,7 @@ const InsuranceCompaniesPage = () => {
     const pages = [];
     const maxVisiblePages = 5;
     let startPage = Math.max(1, currentPage - Math.floor(maxVisiblePages / 2));
-    let endPage = Math.min(totalPages, startPage + maxVisiblePages - 1);
+    const endPage = Math.min(totalPages, startPage + maxVisiblePages - 1);
 
     if (endPage - startPage + 1 < maxVisiblePages) {
       startPage = Math.max(1, endPage - maxVisiblePages + 1);

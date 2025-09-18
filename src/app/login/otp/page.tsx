@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import {
@@ -9,7 +9,7 @@ import {
   AlertCircle,
   CheckCircle,
 } from 'lucide-react';
-import { OtpFormData } from '@/types';
+// import { OtpFormData } from '@/types';
 
 const OtpPage: React.FC = () => {
   const router = useRouter();
@@ -133,7 +133,7 @@ const OtpPage: React.FC = () => {
               {otp.map((digit, index) => (
                 <input
                   key={index}
-                  ref={(el) => (inputRefs.current[index] = el)}
+                  ref={(el) => { inputRefs.current[index] = el; }}
                   type="text"
                   inputMode="numeric"
                   pattern="[0-9]*"

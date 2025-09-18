@@ -34,11 +34,11 @@ interface RoleDetails {
   permissions: string[];
 }
 
-interface ReviewData {
-  companyDetails: CompanyDetails;
-  adminDetails: AdminDetails;
-  roles: RoleDetails[];
-}
+// interface ReviewData {
+//   companyDetails: CompanyDetails;
+//   adminDetails: AdminDetails;
+//   roles: RoleDetails[];
+// }
 
 const CreateClearingAgent = () => {
   const router = useRouter();
@@ -122,7 +122,6 @@ const CreateClearingAgent = () => {
   };
 
   const handleSubmit = () => {
-    // Here you would typically send the data to your API
     console.log('Submitting clearing agent:', { companyDetails, adminDetails, roles });
     router.push('/clearing-agents/view');
   };

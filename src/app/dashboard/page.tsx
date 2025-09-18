@@ -6,7 +6,6 @@ import {
   RefreshCw,
   Filter,
   X,
-  Loader2,
 } from 'lucide-react';
 import Sidebar from '@/components/Sidebar';
 import Topbar from '@/components/Topbar';
@@ -106,7 +105,7 @@ const DashboardPage: React.FC = () => {
   const [isSidebarCollapsed, setIsSidebarCollapsed] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
-  const [metrics, setMetrics] = useState<DashboardMetrics>(mockMetrics);
+  // const [metrics, setMetrics] = useState<DashboardMetrics>(mockMetrics);
   const [dateRange, setDateRange] = useState<DateRange>({
     from: new Date(new Date().getFullYear(), 0, 1),
     to: new Date(),
@@ -180,9 +179,7 @@ const DashboardPage: React.FC = () => {
 
       {/* Topbar */}
       <Topbar
-        user={mockUser}
-        onMenuToggle={handleSidebarToggle}
-        onLogout={handleLogout}
+        onSidebarToggle={handleSidebarToggle}
       />
 
       {/* Main Content */}
@@ -330,20 +327,20 @@ const DashboardPage: React.FC = () => {
             {/* First Row - Revenue & Transaction Trends */}
             <div className="grid grid-cols-1 xl:grid-cols-2 gap-6">
               <div className="bg-white border border-gray-200 rounded-lg p-6">
-                <YearlyPremiumChart data={mockYearlyData} height={350} />
+                <YearlyPremiumChart data={mockYearlyData} height={350} type="bar" />
               </div>
               <div className="bg-white border border-gray-200 rounded-lg p-6">
-                <MonthlyPremiumChart data={mockMonthlyData} height={350} />
+                <MonthlyPremiumChart data={mockMonthlyData} height={350} type="area" />
               </div>
             </div>
 
             {/* Second Row - Distribution and Claims */}
             <div className="grid grid-cols-1 xl:grid-cols-2 gap-6">
               <div className="bg-white border border-gray-200 rounded-lg p-6">
-                <PremiumDistributionChart data={mockDistributionData} height={300} />
+                <PremiumDistributionChart data={mockDistributionData} height={300} type="bar" />
               </div>
               <div className="bg-white border border-gray-200 rounded-lg p-6">
-                <ClaimsTrendChart data={mockClaimsData} height={300} color="#dc2626" />
+                <ClaimsTrendChart data={mockClaimsData} height={300} color="#dc2626" type="line" />
               </div>
             </div>
           </div>
