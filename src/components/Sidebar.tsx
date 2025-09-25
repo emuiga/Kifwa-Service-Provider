@@ -92,12 +92,12 @@ const menuItems: MenuItem[] = [
         href: '/bonds/application',
       },
       {
-        label: 'Guaranteed',
-        href: '/bonds/guaranteed',
+        label: 'Review',
+        href: '/bonds/review',
       },
       {
-        label: 'Non-Guaranteed',
-        href: '/bonds/non-guaranteed',
+        label: 'Procedure',
+        href: '/bonds/procedure',
       },
     ],
   },
